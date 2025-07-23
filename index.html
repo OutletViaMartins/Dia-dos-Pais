@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ofertas Dia dos Pais - Outlet Via Martins</title>
+  <link rel="icon" type="image/png" href="imagens/Logo-Icone.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --azul-primario: #1a3e72;       /* Azul mais escuro e sofisticado */
+    --azul-secundario: #2a5a8f;     /* Azul médio para destaques */
+    --azul-claro: #e8f0fe;          /* Azul claro para fundos */
+    --amarelo: #ffb703;             /* Amarelo mais quente e vibrante */
+    --amarelo-claro: #ffc32c;
+    --branco: #ffffff;
+    --cinza-escuro: #2d3748;        /* Cinza escuro mais suave */
+    --cinza-claro: #f7fafc;         /* Cinza muito claro para fundos */
+    --gradiente-azul: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+    --gradiente-amarelo: linear-gradient(135deg, var(--amarelo-claro) 0%, var(--amarelo) 100%);
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cinza-claro);
+    color: var(--cinza-escuro);
+    line-height: 1.6;
+  }
+  
+  header {
+    background: var(--gradiente-azul);
+    color: var(--branco);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  
+  .header-text-container h1 {
+    font-size: 2.2rem;
+    margin: 10px 0;
+    color: var(--amarelo);
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  }
+  
+  .header-text-container p {
+    font-size: 1.2rem;
+    color: var(--branco);
+    font-weight: 500;
+    max-width: 600px;
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 3rem 2rem;
+    background-color: var(--azul-claro);
+  }
+  
+  .benefits div {
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--branco);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--amarelo);
+    color: var(--azul-primario);
+  }
+  
+  .benefits div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    background-color: var(--azul-secundario);
+    color: var(--branco);
+  }
+  
+  .benefits div i {
+    color: var(--amarelo);
+    font-size: 1.2rem;
+  }
+  
+  .offer {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 4rem 1rem;
+    background: var(--gradiente-amarelo);
+    color: var(--branco);
+    position: relative;
+    overflow: hidden; 
+  }
+
+  .offer::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(0,0,0,0.1)" points="0,100 100,0 100,100"/></svg>');
+    background-size: cover;
+    opacity: 0.5;
+  }
+  
+  .offer h2 {
+    color: var(--azul-primario);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .offer p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0.5rem auto;
+    color: var(--cinza-escuro);
+  }
+  
+  .offer p strong {
+    color: var(--azul-primario);
+    font-weight: 700;
+  }
+  
+  .gallery {
+    background-color: var(--cinza-claro);
+    padding: 3rem 1rem;
+  }
+  
+  .gallery h2 {
+    text-align: center;
+    color: var(--azul-primario);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .gallery h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--amarelo);
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .gallery-item {
+    height: 350px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .trigger-text {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 4rem 1rem;
+    background: var(--gradiente-azul);
+    color: var(--branco);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .trigger-text:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.05)" points="0,100 100,0 100,100"/></svg>');
+    background-size: cover;
+    opacity: 0.3;
+  }
+  
+  .trigger-text h1 {
+    color: var(--amarelo);
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .trigger-text h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    font-weight: 600;
+  }
+  
+  .cta {
+    background: var(--azul-primario);
+    color: var(--branco);
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .cta h2 {
+    color: var(--amarelo);
+    font-size: 1.8rem;
+    margin: 0;
+  }
+  
+  .cta a {
+    background-color: var(--amarelo);
+    color: var(--azul-primario);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  
+  .cta a:hover {
+    background-color: var(--branco);
+    color: var(--azul-primario);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+  
+  .location {
+    background-color: var(--branco);
+    padding: 3rem 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  .location p {
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+    color: var(--cinza-escuro);
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .social-links a {
+    color: var(--azul-primario);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    background: var(--azul-claro);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .social-links a:hover {
+    color: var(--branco);
+    background: var(--azul-secundario);
+    transform: translateY(-3px);
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem;
+    }
+    
+    .header-text-container h1 {
+      font-size: 1.8rem;
+    }
+    
+    .benefits {
+      grid-template-columns: 1fr;
+      padding: 2rem 1rem;
+    }
+    
+    .trigger-text h1 {
+      font-size: 2rem;
+    }
+    
+    .trigger-text h2 {
+      font-size: 1.4rem;
+    }
+    
+    .cta a {
+      font-size: 1.2rem;
+      padding: 0.8rem 1.8rem;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-text-container">
+      <h1>Outlet Via Martins</h1>
+      <p>Vista quem você ama com estilo, conforto e preços imperdíveis!</p>
+    </div>
+  </header>
+
+  <img src="imagens/banner-pais.webp" alt="Ofertas especiais para o Dia dos Pais" class="hero-image">
+
+  <section class="benefits">
+    <div><i class="fas fa-tag"></i> Preços a partir de R$10</div>
+    <div><i class="fas fa-gift"></i> Brindes exclusivos</div>
+    <div><i class="fas fa-tshirt"></i> Peças masculinas até o tamanho 70</div>
+    <div><i class="fab fa-whatsapp"></i> Atendimento por WhatsApp com vídeo chamada</div>
+    <div><i class="fas fa-store"></i> Loja física em Adamantina-SP</div>
+    <div><i class="fas fa-star"></i> Novidades toda semana</div>
+    <div><i class="fas fa-truck"></i> Entregamos em todo o Brasil</div>
+  </section>
+
+  <section class="offer">
+    <h2>👔 Garanta o presente perfeito para o seu pai!</h2>
+    <p>Descontos exclusivos, variedade de tamanhos e peças limitadas.</p>
+    <p><strong>Não perca tempo e fale conosco pelo WhatsApp!</strong></p>
+  </section>
+
+  <section class="gallery">
+    <h2>Peças em Destaque</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="imagens/Jaqueta-Bobojaco-Puffer.webp" alt="Jaqueta Bobojaco Puffer"></div>
+      <div class="gallery-item"><img src="imagens/Jaqueta Moletom Nylon Com Capuz.webp" alt="Jaqueta Moletom Nylon Com Capuz"></div>
+      <div class="gallery-item"><img src="imagens/Jaqueta Jeans Sawary - 279140.webp" alt="Jaqueta Jeans Sawary"></div>
+      <div class="gallery-item"><img src="imagens/Blazer Feminino Preto.webp" alt="Blazer Feminino Preto"></div>
+    </div>
+  </section>
+
+  <section class="trigger-text">
+    <h1>PROMOÇÃO IMPERDÍVEL!</h1>
+    <h2>5 camisetas por R$100</h2>
+  </section>
+  
+  <section class="cta">
+    <h2>Não perca essa oportunidade!</h2>
+    <a href="https://wa.me/5518998092210"><i class="fab fa-whatsapp"></i> Fale conosco agora</a>
+  </section>
+
+  <section class="location">
+    <p>📍 R. Carlos Pegoraro, 290 – Adamantina/SP</p>
+    <p>🕑 Seg a Sex das 8h às 18h e Sáb das 9h às 13h</p>
+    <p>📞 (18) 99809-2210</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/outletviamartinsoficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/outletviamartinsoficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </section>
+</body>
+</html>
