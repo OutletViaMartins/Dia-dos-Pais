@@ -239,6 +239,7 @@
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.05)" points="0,100 100,0 100,100"/></svg>');
     background-size: cover;
     opacity: 0.3;
+    pointer-events: none;
   }
   
   .trigger-text h1 {
@@ -271,7 +272,7 @@
     margin: 0;
   }
   
-  .cta a {
+  .cta a, .trigger-text a {
     background-color: var(--amarelo);
     color: var(--azul-primario);
     padding: 1rem 2.5rem;
@@ -286,7 +287,7 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
   
-  .cta a:hover {
+  .cta a:hover, .trigger-text a:hover {
     background-color: var(--branco);
     color: var(--azul-primario);
     transform: translateY(-5px) scale(1.05);
@@ -394,10 +395,11 @@
   <section class="trigger-text">
     <h1>PROMOÇÃO IMPERDÍVEL!</h1>
     <h2>5 camisetas por R$100</h2>
+    <a id="btn-trigger" href="https://wa.link/zjw4uz"><i class="fas fa-gift"></i></i> Venha conferir</a>
   </section>
   
   <section class="cta">
-    <h2>Não perca essa oportunidade!</h2>
+    <h2>Confira nossas outras ofertas!</h2>
     <a id="btn-zap" href="https://wa.link/zjw4uz"><i class="fab fa-whatsapp"></i> Fale conosco agora</a>
   </section>
 
