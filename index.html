@@ -75,16 +75,26 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
   
-  .benefits {
+  .benefits h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0rem;
+    padding-bottom: none;
+    font-size: 2rem;
+    color: var(--azul-primario);
+  }
+
+  .benefits div {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     justify-content: center;
     gap: 1.5rem;
-    padding: 3rem 2rem;
+    padding: 1rem 2rem 4rem;
     background-color: var(--azul-claro);
   }
   
-  .benefits a {
+  .benefits div a {
     padding: 1.5rem;
     border-radius: 8px;
     display: flex;
@@ -99,14 +109,14 @@
     text-decoration: none;
   }
   
-  .benefits a:hover {
+  .benefits div a:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px rgba(0,0,0,0.1);
     background-color: var(--azul-secundario);
     color: var(--branco);
   }
   
-  .benefits a i {
+  .benefits div a i {
     color: var(--amarelo);
     font-size: 1.2rem;
   }
@@ -131,12 +141,19 @@
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(0,0,0,0.1)" points="0,100 100,0 100,100"/></svg>');
     background-size: cover;
     opacity: 0.5;
+    pointer-events: none;
   }
   
   .offer h2 {
     color: var(--azul-primario);
     font-size: 2rem;
     margin-bottom: 1rem;
+  }
+
+  .offer h3{
+    color: var(--azul-primario);
+    margin-bottom: 2rem;
+    margin-top: 1rem;
   }
   
   .offer p {
@@ -146,11 +163,28 @@
     color: var(--cinza-escuro);
   }
   
-  .offer p strong {
-    color: var(--azul-primario);
+  .offer a{
+    background-color: var(--azul-primario);
+    color: var(--amarelo);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
     font-weight: 700;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
-  
+
+  .offer a:hover{
+    background-color: var(--branco);
+    color: var(--azul-primario);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+
   .gallery {
     background-color: var(--cinza-claro);
     padding: 3rem 1rem;
@@ -245,25 +279,8 @@
     margin-top: 0;
     font-weight: 600;
   }
-  
-  .cta {
-    background: var(--azul-primario);
-    color: var(--branco);
-    padding: 3rem 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .cta h2 {
-    color: var(--amarelo);
-    font-size: 1.8rem;
-    margin: 0;
-  }
-  
-  .cta a, .trigger-text a {
+
+  .trigger-text a {
     background-color: var(--amarelo);
     color: var(--azul-primario);
     padding: 1rem 2.5rem;
@@ -278,7 +295,7 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
   
-  .cta a:hover, .trigger-text a:hover {
+  .trigger-text a:hover {
     background-color: var(--branco);
     color: var(--azul-primario);
     transform: translateY(-5px) scale(1.05);
@@ -349,7 +366,7 @@
       font-size: 1.4rem;
     }
     
-    .cta a .trigger-text a{
+    .offer a .trigger-text a{
       font-size: 1.2rem;
       padding: 0.8rem 1.8rem;
     }
@@ -368,29 +385,23 @@
   <img src="imagens/banner-pais.webp" alt="Ofertas especiais para o Dia dos Pais" class="hero-image">
 
   <section class="benefits">
-    <a id="btn-zap-benefit-10" href="https://wa.link/17kbuk"><i class="fas fa-tag"></i> Preços a partir de R$10</a>
-    <a id="btn-zap-benefit-relogio" href="https://wa.link/mvkaut"><i class="fas fa-gift"></i> Promoção: Relógio e Copo Stanley</a>
-    <a id="btn-zap-benefit-video" href="https://wa.link/lfq05e"><i class="fab fa-whatsapp"></i> Atendimento por WhatsApp com videochamada</a>
-    <a id="btn-maps-benefit" href="https://maps.app.goo.gl/2BjKhRaKjGXnnNiT9"><i class="fas fa-store"></i> Loja física em Adamantina-SP</a>
-    <a id="btn-zap-benefit-entrega" href="https://wa.link/cr911n"><i class="fas fa-truck"></i> Entregamos em todo o Brasil</a>
+    <h2>Escolha uma das opções!</h2>
+    <div>
+      <a id="btn-zap-benefit-10" href="https://wa.link/17kbuk"><i class="fas fa-tag"></i> Preços a partir de R$10</a>
+      <a id="btn-zap-benefit-video" href="https://wa.link/wh2g3z"><i class="fab fa-whatsapp"></i> Atendimento por WhatsApp</a>
+      <a id="btn-maps-benefit" href="https://maps.app.goo.gl/2BjKhRaKjGXnnNiT9"><i class="fas fa-store"></i> Loja física em Adamantina-SP</a>
+      <a id="btn-zap-benefit-entrega" href="https://wa.link/cr911n"><i class="fas fa-truck"></i> Entregamos no conforto da sua casa</a>
+    </div>
   </section>
-
-  <section class="offer">
-    <h2>👔 Garanta o presente perfeito para o seu pai!</h2>
-    <p>Descontos exclusivos, variedade de tamanhos e peças limitadas.</p>
-    <p><strong>Não perca tempo e fale conosco pelo WhatsApp!</strong></p>
-  </section>
-
-
 
   <section class="trigger-text">
     <h1>PROMOÇÃO IMPERDÍVEL!</h1>
     <h2>5 camisetas por R$100</h2>
-    <a id="btn-trigger" href="https://wa.link/r1s1az"><i class="fas fa-gift"></i></i> Venha conferir</a>
   </section>
-  
-  <section class="cta">
-    <h2>Confira nossas outras ofertas!</h2>
+
+  <section class="offer">
+    <h2>👔 Garanta o presente perfeito para o seu pai!</h2>
+    <h3>Descontos exclusivos</h3>
     <a id="btn-zap" href="https://wa.link/zjw4uz"><i class="fab fa-whatsapp"></i> Fale conosco agora</a>
   </section>
 
@@ -400,8 +411,8 @@
     <p>📞 (18) 99809-2210</p>
     <div class="social-links-text">Nos Siga nas Redes Sociais</div>
     <div class="social-links">
-      <a href="https://www.instagram.com/outletviamartinsoficial/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/outletviamartinsoficial" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+      <a id="btn-insta" href="https://www.instagram.com/outletviamartinsoficial/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      <a id="btn-face" href="https://www.facebook.com/outletviamartinsoficial" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
     </div>
   </section>
 
